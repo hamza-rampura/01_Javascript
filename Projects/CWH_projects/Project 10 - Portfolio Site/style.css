@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Source+Code+Pro:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {    
+    font-family: 'Fira Sans', sans-serif;
+}
+
+p {    
+    font-family: 'Source Code Pro', monospace;
+}
+
+.sidebar {
+    background-color: #82c598;
+    width: 300px;
+    height: 100vh;
+    font-family: 'Fira Sans', sans-serif;
+}
+.sidebar nav {
+    padding: 45px;
+
+}
+
+.sidebar nav li{
+    list-style: none;
+    font-size: 25px;
+    padding: 33px 0;
+}
+
+.sidebar nav li a {    
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.container {
+    display: flex;
+}
+
+.main {
+    padding: 2rem;
+    width: 90vw;
+}
+
+.infoContainer {
+    /* background-color: rgb(186, 119, 231); */
+    height: 55vh;
+    width: 80vw;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.devInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* font-family: 'Source Code Pro', monospace; */
+}
+
+.devPic img {
+    height: 100%;
+}
+
+.hello {
+    font-size: 40px;
+}
+
+.name {
+    font-size: 50px;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+.about {
+    font-size: 40px;
+}
+
+.moreAbout {
+    font-size: 20px;
+    margin-top: 1em;
+}
+
+.btn {
+    /* width: 10vw; */
+    height: 5vh;
+    margin: 1rem;
+    margin-left: 0;
+    padding: 0.5em 1rem;
+    border-radius: 22px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #82c598;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+/* contact form CSS */ 
+
+.contactForm {    
+    padding: 1rem;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.contactForm h1 {    
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+}
+
+.contactForm form div {
+    margin: 2rem auto;
+}
+
+.contactForm form div label {
+    display: inline-block;
+    width: 8vw;
+}
+
+.contactForm form div input {
+    width: 20vw;
+    padding: 5px;
+}
+
+.contactForm form div.form-check * {
+    width: auto;
+}
+
+.btn-sm {
+    font-size: 16px;
+}
+
+.intro h2 {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.intro * {
+    margin-top: 0.5rem;
+}
+
+.skillContainer {
+    width: fit-content;
+}
+
+.skillItem {
+    display: flex;
+    /* align-items: center; */
+    width: 50vw;
+}
+
+.skillItem p {
+    margin-top: 0;
+    width: 20%;
+}
+
+.skill {
+    background-color: red;
+    height: 2vh;
+    margin-top: 0;
+    /* transition: width 2s inf; */
+    /* width: 10%; */
+}
+
+.r50 {
+    width: 40%;
+}
+
+.r70 {
+    width: 50%;
+}
+
+.r90 {
+    width: 80%;
+}
+
+.hamburger {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+}
+
+/* responsive design */
+
+@media screen and (max-width: 1000px) {
+    /* * {
+        background-color: red;
+    } */
+    .sidebar {
+        transform: translate(-300px, 0);
+        position: absolute;
+    }
+  }

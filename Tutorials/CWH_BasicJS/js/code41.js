@@ -42,5 +42,5 @@ function hamza()  {
 
 let greet = (params,work)  => "Good Morning " + params + work;
 
-console.log(greet("Hamza", "Please continue with yesterdays task!"))
+console.log(greet("Hamza", "Please continue with yesterdays task!"));
 
