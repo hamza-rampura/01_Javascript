@@ -295,7 +295,7 @@ console.log("After getData");
 // Async & Await
 
 
-let url = "http://dummy.restapiexample.com/api/v1/employees";
+// let url = "http://dummy.restapiexample.com/api/v1/employees";
 
 /* async function promFunc() {
     console.log("inside function");
@@ -564,7 +564,7 @@ console.log(a1,b1); */
 
 // closure 
 
-let outerFun = (a) => {
+/* let outerFun = (a) => {
     let b = 10;
     let innerFun = () => {
         let sum = a + b;
@@ -575,11 +575,213 @@ let outerFun = (a) => {
 
 let inner = outerFun(10);
 
-inner();
+inner(); */
+
+
+/* promises test */
+/* 
+function getData() {
+    return new Promise((resolve,reject)=> {
+        
+    })
+} */
 
 
 
+/* function getData() {
+    const url = "hamza.txt";
+    fetch(url).then((response)=> {
+        console.log("Inside 1st then. Success");
+        return response.json();
+    }).then((data) => {
+        console.log("Inside second then")
+        console.log(data);
+    }).catch(()=>{
+        console.log("promise unresolved.")
+    })
+}
+
+console.log("before getData");
+getData();
+console.log("After getData"); */
 
 
 
+/* let url ="hamza.txt"
+
+async function promFunc() {
+    console.log("inside function");
+    const response = await fetch(url);
+    console.log("after fetch: waiting for response");
+    const data = await response.json();
+    return data;
+}
+
+
+console.log("before calling function");
+let promise = promFunc();
+console.log("after calling function");
+console.log(promise)
+promise.then(data => console.log(data));
+console.log("last line of JS"); */
+
+/* promise test */
+
+/* let test = new Promise((resolve,reject)=> {
+    let error = false;
+    if(error) {
+        reject("aise hi aagaya error");
+        console.log("rejected");
+    } else {
+        console.log("resolve")
+        resolve();
+    }
+});
+
+test.then().catch((e)=> {
+    console.log("promise failed " + e);
+}); */
+
+/*fetch */
+
+/* const url = "hamza.txt";
+
+function getData(url) {
+    fetch(url).then((response)=>{
+        console.log("got the data")
+        return response.text();
+    }).then((data) => {
+        console.log(data);
+    })
+}
+
+getData(url) */
+
+/** deep copy */
+
+/* let a = [10,20,30,40,50, [40,50,60]];
+let b = [...a]; //this is known as a shallow copy
+a[5].push(70); // this will affect both the arrays
+console.log(a,b);
+
+let a = [10,20,30,40,50, [40,50,60]];
+let b = JSON.parse(JSON.stringify(a)); // this will create a deep copy
+a[5].push(70); // this will affect only "a" the arrays
+console.log(a,b); */
+
+/* let arr = [10,20,30,40,50,60,70,80,90,100];
+let res = arr.map((e)=>{
+    return e*=10;
+});
+console.log(JSON.parse("[" + arr.join(",") + "]")) */
+// console.log(JSON.parse(arr.split("")),res);
+
+/* function testThis() {
+    console.log(this);
+} */
+
+/* let myObj = {
+    name: "Hamza",
+    run: () => {
+        console.log(this)
+    },
+    walk: function() {
+        console.log(this)
+    }
+}
+
+myObj.run();
+myObj.walk(); */
+
+
+/* let arr = [10,20,30,40,50]
+let res = arr.map((e)=> {
+    return e>=30;
+});
+console.log(res, arr) */
+
+/* destructuring */
+
+// let foo = ['one', 'two', 'three'];
+
+// without destructuring
+/* let one   = foo[0];
+let two   = foo[1];
+let three = foo[2]; */
+
+// with destructuring
+// let [one, two, three] = foo;
+
+/* function someFunction (a,b,c) {
+    console.log(a,b,c)
+}
+
+someFunction(...foo);
+ */
+
+// call vs apply vs bind
+
+/* let name = {
+    firstName: "Hamza",
+    lastName: "Rampurawala",
+    
+}
+
+let printFullName = function(homeTown,state){
+    console.log(this.firstName + " " + this.lastName);
+    console.log("Address:" + homeTown + " " + state)
+}
+
+let name2 = {
+    firstName: "Sachin",
+    lastName: "Tendulkar"
+}  
+
+let pfNameClone = printFullName.bind(name2, "Mumbai", "Maharashtra")
+pfNameClone();  */
+
+/* polyfill */
+
+/* let name = {
+    firstName: "Hamza",
+    lastName: "Rampurawala"    
+}
+
+let printFullName = function(fName, mName, gName){
+    console.log(this.firstName + " " + this.lastName + " " + fName + " " + mName + " " + gName);
+}
+
+// custom bind
+
+Function.prototype.myBind = function(...args) {
+    console.log(args)
+    let obj = this;
+    params = args.slice(1);
+    return function(...args2) {
+        obj.apply(args[0], [...params, ...args2]);
+    }
+}
+
+let pfNameClone = printFullName.myBind(name, "Quresh");
+pfNameClone("Yasmin", "Taiyeb"); */
+
+let name = {
+    firstName: "Hamza",
+    lastName: "Rampurawala"    
+}
+
+let printFullName = function(state, city){
+    console.log(this.firstName + " " + this.lastName + " " + state + " " + city);
+}
+
+Function.prototype.myBind= function(...args) {
+    let obj = this; //function reference
+    params = args.slice(1);
+    return function(...args2) {
+        obj.apply(args[0], [...params, ...args2])
+    }
+}
+
+let pfNameClone = printFullName.myBind(name, "Maharashtra");
+pfNameClone("Pune");
 
